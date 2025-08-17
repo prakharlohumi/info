@@ -6,6 +6,7 @@
     <title>$ whoami | Prakhar Lohumi - AI Engineer & Tech Innovator</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <!-- Matrix Background -->
@@ -22,6 +23,7 @@
                 <a href="#projects" class="nav-link">projects</a>
                 <a href="#skills" class="nav-link">skills</a>
                 <a href="#achievements" class="nav-link">achievements</a>
+                <a href="#blogs" class="nav-link">blogs</a>
                 <a href="#contact" class="nav-link">contact</a>
             </div>
         </div>
@@ -46,14 +48,14 @@
                 <div class="terminal-output">
                     <div class="output-line">Prakhar Lohumi - AI Engineer & Tech Innovator</div>
                     <div class="output-line">Location: Bangalore, India</div>
-                    <div class="output-line">Status: Crafting the future of Conversational AI</div>
+                    <div class="output-line">Current Position: AI Engineer at Marquee Goldman Sachs</div>
                 </div>
                 <div class="terminal-line">
                     <span class="prompt">$</span>
                     <span class="command typing" data-text="cat bio.txt">cat bio.txt</span>
                 </div>
                 <div class="terminal-output bio-output">
-                    <p>Passionate AI Engineer with expertise in NLP, LLMs, and building scalable data systems. Currently crafting the future of Conversational AI at Goldman Sachs.</p>
+                    <p>Passionate AI Engineer with expertise in NLP, LLMs, and building scalable data systems. Currently building Marquee AI at Goldman Sachs.</p>
                 </div>
                 <div class="terminal-line cursor-line">
                     <span class="prompt">$</span>
@@ -79,7 +81,7 @@
                 <div class="terminal-body">
                     <div class="file-listing">
                         <div class="file-line">-rw-r--r-- 1 prakhar staff  25 Aug 12 23:00 name.txt</div>
-                        <div class="file-line">-rw-r--r-- 1 prakhar staff  18 Jan 31 1999 birth_date.txt</div>
+                        <div class="file-line">-rw-r--r-- 1 prakhar staff  18 1999 birth_date.txt</div>
                         <div class="file-line">-rw-r--r-- 1 prakhar staff  32 Aug 12 2025 location.txt</div>
                         <div class="file-line">-rw-r--r-- 1 prakhar staff  56 Jul 20 2020 education.txt</div>
                         <div class="file-line">-rw-r--r-- 1 prakhar staff  128 Aug 12 2025 fun_facts.txt</div>
@@ -91,7 +93,7 @@
                         </div>
                         <div class="detail-item">
                             <span class="detail-key">Born:</span>
-                            <span class="detail-value">31st January, 1999</span>
+                            <span class="detail-value">1999</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-key">Location:</span>
@@ -99,11 +101,11 @@
                         </div>
                         <div class="detail-item">
                             <span class="detail-key">Education:</span>
-                            <span class="detail-value">B.Tech CSE, MNNIT Allahabad (CPI: 8.98)</span>
+                            <span class="detail-value">B.Tech CSE, NIT Allahabad</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-key">Fun Fact:</span>
-                            <span class="detail-value">AIR 5 in ISC Class XII & National Debating Champion</span>
+                            <span class="detail-value">Public Speaker and National Debating Champion</span>
                         </div>
                     </div>
                 </div>
@@ -126,7 +128,7 @@
                         <p class="company">Goldman Sachs • Bangalore</p>
                         <p class="duration">Jan'23 - Present</p>
                         <div class="timeline-details">
-                            <p>Current role focusing on AI/ML technologies and conversational AI platforms</p>
+                            <p>Current role focusing on AI/ML technologies, and building scalable AI systems within for Financial platforms.</p>
                         </div>
                     </div>
                 </div>
@@ -426,6 +428,70 @@
         </div>
     </section>
 
+    <!-- Blogs Section -->
+    <section id="blogs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="terminal-title">$ cat blogs.txt</h2>
+            </div>
+            <div class="blogs-terminal">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-title">blogs</div>
+                    </div>
+                    <div class="terminal-body">
+                        <!-- Blog List View -->
+                        <div id="blog-list" class="blog-list">
+                            <div class="blog-loading">
+                                <div class="loading-text">$ ls -la blogs/</div>
+                                <div class="loading-spinner">Loading blog posts...</div>
+                            </div>
+                            <div id="blog-posts" class="blog-posts"></div>
+                            <div id="no-blogs" class="no-blogs hidden">
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span>
+                                    <span class="command">find ./blogs -name "*.md" | wc -l</span>
+                                </div>
+                                <div class="output-line">0</div>
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span>
+                                    <span class="command">echo "status"</span>
+                                </div>
+                                <div class="output-line blog-status">No blog posts yet. Stay tuned!</div>
+                                <div class="output-line">
+                                    <span class="terminal-secondary">💡 To add a blog post:</span>
+                                </div>
+                                <div class="output-line blog-instructions">
+                                    <span class="terminal-gray">1. Create a .md file in the blogs/ directory</span>
+                                </div>
+                                <div class="output-line blog-instructions">
+                                    <span class="terminal-gray">2. Update blogIndex.json with post metadata</span>
+                                </div>
+                                <div class="output-line blog-instructions">
+                                    <span class="terminal-gray">3. Refresh to see your post appear!</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Content View -->
+                        <div id="blog-content" class="blog-content hidden">
+                            <div class="blog-header">
+                                <button id="back-to-list" class="btn btn--outline btn--sm">
+                                    ← back to list
+                                </button>
+                                <div class="blog-meta">
+                                    <h3 id="blog-title"></h3>
+                                    <div class="blog-date" id="blog-date"></div>
+                                </div>
+                            </div>
+                            <div id="blog-body" class="blog-body"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -476,4 +542,7 @@
 
     <script src="app.js"></script>
 </body>
+<footer class="site-footer">
+    <p>This website is created by Prakhar Lohumi, using AI, and hosted on GitHub Pages.</p>
+  </footer>  
 </html>
